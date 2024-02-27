@@ -32,7 +32,7 @@ def get_data(dataset, data_root, iid, num_users):
 
         train_set = torchvision.datasets.CIFAR10(data_root,
                                                train=True,
-                                               download=False,
+                                               download=True,
                                                transform=transform_train
                                                )
 
@@ -40,7 +40,7 @@ def get_data(dataset, data_root, iid, num_users):
 
         test_set = torchvision.datasets.CIFAR10(data_root,
                                                 train=False,
-                                                download=False,
+                                                download=True,
                                                 transform=transform_test
                                                 )
     
@@ -60,7 +60,7 @@ def get_data(dataset, data_root, iid, num_users):
 
         train_set = torchvision.datasets.CIFAR100(data_root,
                                                train=True,
-                                               download=False,
+                                               download=True,
                                                transform=transform_train
                                                )
 
@@ -68,7 +68,7 @@ def get_data(dataset, data_root, iid, num_users):
 
         test_set = torchvision.datasets.CIFAR100(data_root,
                                                 train=False,
-                                                download=False,
+                                                download=True,
                                                 transform=transform_test
                                                 )
     
@@ -121,7 +121,7 @@ class WMDataset(Dataset):
 def prepare_wm(datapath='/trigger/pics/', num_back=1, shuffle=True):
     
     triggerroot = datapath
-    labelpath = '/home/lbw/Data/trigger/labels-cifar.txt'
+    labelpath = './Data/trigger/labels-cifar.txt'
 
     mean, std = (0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)
 

@@ -34,7 +34,7 @@ class IPRFederatedLearning(Experiment):
         self.dp = args.dp
         self.sigma = args.sigma
 
-        data_root = '/home/lbw/Data/'
+        data_root = './Data/'
  
         print('==> Preparing data...')
         self.train_set, self.test_set, self.dict_users = get_data(dataset=self.dataset,
@@ -238,7 +238,7 @@ class IPRFederatedLearning(Experiment):
                 
                 if self.num_sign != 0:
                     mean_private_sign_acc /= self.num_sign
-
+                print("mean asr {} asrs {}".format(mean_acc_wm, acc_wms))
                 print(
                     "Train Loss {:.4f} --- Val Loss {:.4f} --- Sign Loss {:.4f} --- Private Sign Acc {:.4f} -- Watermark Acc {:.4f}"
                     .format(loss_train_mean, loss_val_mean, mean_sign_loss, mean_private_sign_acc, mean_acc_wm))
